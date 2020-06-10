@@ -13,6 +13,8 @@
    integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
    crossorigin=""></script>
 
+   <script src = "./myFirstMap/leaflet/data/old_well_4326.geojson"></script>
+
 </head>
 <body>
 
@@ -22,12 +24,12 @@
     </style>
 
     <script>
-        var map = L.map('mapid').setView([34.68, -82.84], 17);
-        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {}).addTo(map)
-        L.marker([34.6834, -82.8374]).addTo(map)
-            .bindPopup("Clemson, SC")
+        var map = L.map('mapid').setView([35.91, -79.05], 17);
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png, {}).addTo(map)
+        L.marker([35.911271, --79.049807]).addTo(map)
+            .bindPopup("CH 332")
             .openPopup();
-
+        L.geoJSON(uncwell).addTo(map)
     </script>
     
 </body>
