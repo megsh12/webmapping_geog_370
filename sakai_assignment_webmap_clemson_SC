@@ -24,26 +24,11 @@
     </style>
 
     <script>
-        var map = L.map('mapid').setView([35.91, -79.05], 17);
+        var map = L.map('mapid').setView([34.68, -82.84], 17);
         L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',{}).addTo(map)
-        L.marker([35.911271, -79.049807]).addTo(map)
-            .bindPopup("CH 332")
-            .openPopup();
-
-        L.geoJSON(uncwell).addTo(map)
-        var uncIcon = L.icon({
-            iconUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcToZsMSGYK406ZXNMUewD-jS9_AB8ABEhbtMiwGi0YYyxvG0UVE&usqp=CAU',
-            iconSize: [40,40],
-            popupAnchor: [0,0]
-        });
-
-        var customPopup = "UNC Well<br/><img src='https://global.unc.edu/files/2020/02/spring_4_09__12_054-768x511.jpg'width='100px'/>"; 
-
-        L.geoJSON(uncwell, { // a
-        pointToLayer:function(feature, latlng) { // b
-        returnL.marker(latlng, {icon:uncIcon});}}) // c
-        .bindPopup(customPopup) // d
-        .addTo(map); //
+        L.marker([34.6787, -82.8432]).addTo(map)
+            .bindPopup("Clemson")
+            .openPopup();        
 
     </script>
     
