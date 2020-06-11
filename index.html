@@ -24,6 +24,13 @@
     </style>
 
     <script>
+        var daPhoto = L.tileLayer('file:///C%3A/Users/meagan4/Documents/GitHub/webmapping_geog_370/tile_exa/{z}/{x}/{y}.png', {
+        minZoom: 12,
+        maxZoom: 16,
+        tms: false,
+        attribution: 'USGS'
+      }).addTo(map);
+        
         var map = L.map('mapid').setView([35.9070, -79.0479], 15);
         L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',{}).addTo(map)
         L.marker([35.9070, -79.0479]).addTo(map)
@@ -44,13 +51,6 @@
         return L.marker(latlng, {icon:uncIcon});}}) // c
         .bindPopup(customPopup) // d
         .addTo(map); //
-
-        var daPhoto = L.tileLayer('file:///C%3A/Users/meagan4/Documents/GitHub/webmapping_geog_370/tile_exa/{z}/{x}/{y}.png', {
-        minZoom: 12,
-        maxZoom: 16,
-        tms: false,
-        attribution: 'USGS'
-      }).addTo(map);
 
     </script>
     
