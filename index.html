@@ -44,7 +44,12 @@
             popupAnchor: [0,0]
         });
 
-        var customPopup = "Stadium<br/><img src='https://lh3.googleusercontent.com/proxy/ci29g_hyxKp2lX6EW0-LAQ7p8IR4lw3E0PqsmKzOXCKHWDorQbWrK28MeCNC5A4-wQ_BzJmnC7yGzSO1H9kty0ft5-PQ3L28kKcRNmlkpwhMB_6amZ7dpnLRFZiuv2ATh-8vwBZSAeY'width='100px'/>"; 
+        L.Kenan
+        var customPopup = L.icon({
+            iconUrl: 'https://lh3.googleusercontent.com/proxy/ci29g_hyxKp2lX6EW0-LAQ7p8IR4lw3E0PqsmKzOXCKHWDorQbWrK28MeCNC5A4-wQ_BzJmnC7yGzSO1H9kty0ft5-PQ3L28kKcRNmlkpwhMB_6amZ7dpnLRFZiuv2ATh-8vwBZSAeY',
+            iconSize: [40,40]
+            popupAnchor: [0,0]
+        });    
 
         L.geoJSON(uncwell, { // a
         pointToLayer:function(feature, latlng) { // b
