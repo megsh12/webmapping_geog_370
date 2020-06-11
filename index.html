@@ -30,14 +30,14 @@
             .bindPopup("CH 332")
             .openPopup();
 
-        L.geoJSON(uncwell).addTo(map)
+        L.geoJSON(Kenan).addTo(map)
         var uncIcon = L.icon({
-            iconUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcToZsMSGYK406ZXNMUewD-jS9_AB8ABEhbtMiwGi0YYyxvG0UVE&usqp=CAU',
+            iconUrl: 'https://goheels.com/images/2017/9/9/band_MarchingBand_lou_641.jpg',
             iconSize: [40,40],
             popupAnchor: [0,0]
         });
 
-        var customPopup = "UNC Well<br/><img src='https://global.unc.edu/files/2020/02/spring_4_09__12_054-768x511.jpg'width='100px'/>"; 
+        var customPopup = "Stadium<br/><img src='https://lh3.googleusercontent.com/proxy/ci29g_hyxKp2lX6EW0-LAQ7p8IR4lw3E0PqsmKzOXCKHWDorQbWrK28MeCNC5A4-wQ_BzJmnC7yGzSO1H9kty0ft5-PQ3L28kKcRNmlkpwhMB_6amZ7dpnLRFZiuv2ATh-8vwBZSAeY'width='100px'/>"; 
 
         L.geoJSON(uncwell, { // a
         pointToLayer:function(feature, latlng) { // b
