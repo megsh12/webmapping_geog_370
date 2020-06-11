@@ -28,33 +28,17 @@
   <script>
       var map = L.map('map').setView([35.90485081214854, -79.04823059115049], 14.0);
       
+      var OSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	      maxZoom: 19,
+	      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+          });
+      
       var daPhoto = L.tileLayer('file:///C%3A/Users/meagan4/Documents/GitHub/webmapping_geog_370/tile_exa/{z}/{x}/{y}.png', {
         minZoom: 12,
         maxZoom: 16,
         tms: false,
         attribution: 'USGS'
       }).addTo(map);
-
-      var map = L.map('mapid').setView([35.91, -79.05], 17);
-        L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',{}).addTo(map)
-        L.marker([35.9086, -79.0492]).addTo(map)
-            .bindPopup("Morehead-Patterson Bell Tower")
-            .openPopup();
-
-        L.geoJSON(bell).addTo(map)
-        var uncIcon = L.icon({
-            iconUrl: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/The_Morehead_Patterson_Bell_Tower.jpg/1200px-The_Morehead_Patterson_Bell_Tower.jpg',
-            iconSize: [40,40],
-            popupAnchor: [0,0]
-        });
-
-        var customPopup = "Bell Tower<br/><img src='https://college.unc.edu/files/2020/01/015719_CampusScenes0114-300x200.jpg'width='100px'/>"; 
-
-        L.geoJSON(bell, { // a
-        pointToLayer:function(feature, latlng) { // b
-        return L.marker(latlng, {icon:uncIcon});}}) // c
-        .bindPopup(customPopup) // d
-        .addTo(map); //
   </script>
 </body>
 </html>
