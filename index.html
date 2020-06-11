@@ -24,32 +24,20 @@
     </style>
 
     <script>
-        var daPhoto = L.tileLayer('file:///C%3A/Users/meagan4/Documents/GitHub/webmapping_geog_370/tile_exa/{z}/{x}/{y}.png', {
-        minZoom: 12,
-        maxZoom: 16,
-        tms: false,
-        attribution: 'USGS'
-      }).addTo(map);
-        
-        var map = L.map('mapid').setView([35.9070, -79.0479], 15);
+        var map = L.map('mapid').setView([35.91, -79.05], 17);
         L.tileLayer('https://{s}.tile.opentopomap.org/{z}/{x}/{y}.png',{}).addTo(map)
-        L.marker([35.9070, -79.0479]).addTo(map)
-            .bindPopup("Football Stadium")
+        L.marker([35.911271, -79.049807]).addTo(map)
+            .bindPopup("CH 332")
             .openPopup();
 
-        L.geoJSON(Kenan).addTo(map)
+        L.geoJSON(uncwell).addTo(map)
         var uncIcon = L.icon({
-            iconUrl: 'https://goheels.com/images/2017/9/9/band_MarchingBand_lou_641.jpg',
+            iconUrl: 'https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcToZsMSGYK406ZXNMUewD-jS9_AB8ABEhbtMiwGi0YYyxvG0UVE&usqp=CAU',
             iconSize: [40,40],
             popupAnchor: [0,0]
         });
 
-        L.Kenan
-        var customPopup = L.icon({
-            iconUrl: 'https://lh3.googleusercontent.com/proxy/ci29g_hyxKp2lX6EW0-LAQ7p8IR4lw3E0PqsmKzOXCKHWDorQbWrK28MeCNC5A4-wQ_BzJmnC7yGzSO1H9kty0ft5-PQ3L28kKcRNmlkpwhMB_6amZ7dpnLRFZiuv2ATh-8vwBZSAeY',
-            iconSize: [40,40]
-            popupAnchor: [0,0]
-        });    
+        var customPopup = "UNC Well<br/><img src='https://global.unc.edu/files/2020/02/spring_4_09__12_054-768x511.jpg'width='100px'/>"; 
 
         L.geoJSON(uncwell, { // a
         pointToLayer:function(feature, latlng) { // b
