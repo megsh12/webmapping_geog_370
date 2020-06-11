@@ -41,7 +41,7 @@
 
         L.geoJSON(uncwell, { // a
         pointToLayer:function(feature, latlng) { // b
-        returnL.marker(latlng, {icon:uncIcon});}}) // c
+        return L.marker(latlng, {icon:uncIcon});}}) // c
         .bindPopup(customPopup) // d
         .addTo(map); //
 
