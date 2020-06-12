@@ -28,19 +28,57 @@
   <script>
       var map = L.map('map').setView([35.90485081214854, -79.04823059115049], 14.0);
 
-      var OpenStreetMap_Mapnik = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+
+      var OSM = L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
 	      maxZoom: 19,
 	      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
           }).addTo(map);
 
-        L.tileLayer('./tile_exa/{z}/{x}/{y}.png', {
+      var daPhoto = L.tileLayer('./tile_exa/{z}/{x}/{y}.png', {
           minZoom: 12,
           maxZoom: 16,
           tms: false,
           attribution: 'USGS'
-            }).addTo(map)
+            })
+
+        var uncIcon = L.icon({
+            iconUrl: 'https://goheels.com/images/2017/9/9/band_MarchingBand_lou_641.jpg',
+            iconSize: [40,40],
+            popupAnchor: [0,0]
+        });
+
+        var customPopup = "Thanks for your help in getting this to work :) This is UNC's Kenan Stadium<br/><img src='https://assets.simpleviewinc.com/simpleview/image/fetch/c_fill,h_411,q_75,w_620/https://assets.simpleviewinc.com/simpleview/image/upload/crm/chapelhill/Kenan_Memorial_Stadium_462_by_305_a8cd6490-5056-8c03-0b89615763a6b2c3.jpg'width='100px'/>";
+
+        var daMarker = L.marker([35.9070, -79.0479], {icon: uncIcon}).bindPopup(customPopup);
 
 
+        // L.geoJSON(uncwell).addTo(map)
+        // var uncIcon = L.icon({
+        //     iconUrl: 'https://goheels.com/images/2017/9/9/band_MarchingBand_lou_641.jpg',
+        //     iconSize: [40,40],
+        //     popupAnchor: [0,0]
+        // });
+
+        // var customPopup = "UNC Kenan<br/><img src='https://global.unc.edu/files/2020/02/spring_4_09__12_054-768x511.jpg'width='100px'/>"; 
+
+        // L.geoJSON(uncwell, { // a
+        // pointToLayer:function(feature, latlng) { // b
+        // return L.marker(latlng, {icon:uncIcon});}}) // c
+        // .bindPopup(customPopup) // d
+        // .addTo(map); //
+
+
+
+      var daTiles = {
+        "Open Street Map": OSM,
+        "UNC Photo": daPhoto
+      }
+
+      var daVectors = {
+        "The Centre": daMarker
+      }
+
+      L.control.layers(daVectors, daTiles).addTo(map)
   
       
   </script>
