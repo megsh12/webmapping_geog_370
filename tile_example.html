@@ -53,7 +53,7 @@
           maxZoom: 16,
           tms: false,
           attribution: 'USGS'
-            })
+            });
 
         var uncIcon = L.icon({
             iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png',
@@ -67,11 +67,11 @@
 
         var franklin = [[35.909661, -79.064804], [35.914610, -79.052015]];
         var line = L.polyline(franklin, {color: 'blue'})
-        .bindPopup("This is the main street of Chapel Hill with many restaurants")
+        .bindPopup("This is the main street of Chapel Hill with many restaurants");
 
         var field = [[35.908290, -79.044985], [35.908898, -79.045178], [35.909130, -79.043939], [35.908500, -79.043791]];
-        var polygon = L.polygon(field, {color: red})
-        .bindPopup("This field was recently refurbished.")
+        var polygon = L.polygon(field, {color: 'red'})
+        .bindPopup("This field was recently refurbished.");
 
       var daTiles = {
         "Open Street Map": OSM,
